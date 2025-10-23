@@ -1,4 +1,4 @@
-# tf-aws-module_primitive-iam_policy
+# simple
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
@@ -10,20 +10,17 @@
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.100.0 |
+No providers.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_aws_iam_policy"></a> [aws\_iam\_policy](#module\_aws\_iam\_policy) | ../../ | n/a |
 
 ## Resources
 
-| Name | Type |
-|------|------|
-| [aws_iam_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
-| [aws_iam_policy_document.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+No resources.
 
 ## Inputs
 
