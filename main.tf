@@ -5,6 +5,16 @@ data "aws_iam_policy_document" "this" {
       sid       = statement.value.sid
       actions   = statement.value.actions
       resources = statement.value.resources
+
+      dynamic "condition" {
+        for_each = statement.value.conditions == null ? [] : statement.value.conditions
+        iterator = condition
+        content {
+          test     = condition.value.test
+          variable = condition.value.variable
+          values   = condition.value.values
+        }
+      }
     }
   }
 }

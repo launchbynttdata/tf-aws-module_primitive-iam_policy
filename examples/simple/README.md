@@ -28,7 +28,7 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_policy_name"></a> [policy\_name](#input\_policy\_name) | The name of the IAM policy. | `string` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | A map of tags to assign to the IAM policy. | `map(string)` | `{}` | no |
-| <a name="input_policy_statement"></a> [policy\_statement](#input\_policy\_statement) | The policy statement in JSON format. | <pre>map(object({<br/>    sid       = string<br/>    actions   = list(string)<br/>    resources = list(string)<br/>  }))</pre> | n/a | yes |
+| <a name="input_policy_statement"></a> [policy\_statement](#input\_policy\_statement) | The policy statements, supporting optional IAM conditions. | <pre>map(object({<br/>    sid       = string<br/>    actions   = list(string)<br/>    resources = list(string)<br/>    conditions = optional(list(object({<br/>      test     = string<br/>      variable = string<br/>      values   = list(string)<br/>    })))<br/>  }))</pre> | n/a | yes |
 
 ## Outputs
 

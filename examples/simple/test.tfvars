@@ -13,5 +13,12 @@ policy_statement = {
     sid       = "Stmt2"
     actions   = ["s3:GetObject", "s3:PutObject"]
     resources = ["arn:aws:s3:::example-bucket/*"]
+    conditions = [
+      {
+        test     = "StringLike"
+        variable = "s3:prefix"
+        values   = ["home/*"]
+      }
+    ]
   }
 }
