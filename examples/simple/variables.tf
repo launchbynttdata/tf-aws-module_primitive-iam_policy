@@ -10,10 +10,15 @@ variable "tags" {
 }
 
 variable "policy_statement" {
-  description = "The policy statement in JSON format."
+  description = "The policy statements, supporting optional IAM conditions."
   type = map(object({
     sid       = string
     actions   = list(string)
     resources = list(string)
+    conditions = optional(list(object({
+      test     = string
+      variable = string
+      values   = list(string)
+    })))
   }))
 }
