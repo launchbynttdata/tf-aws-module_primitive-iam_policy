@@ -22,6 +22,10 @@ const (
 )
 
 func TestComposableComplete(t *testing.T, ctx types.TestContext) {
+	TestComposableCompleteReadOnly(t, ctx)
+}
+
+func TestComposableCompleteReadOnly(t *testing.T, ctx types.TestContext) {
 	iamClient := GetAWSIAMClient(t)
 
 	policyArn := terraform.Output(t, ctx.TerratestTerraformOptions(), "policy_arn")
