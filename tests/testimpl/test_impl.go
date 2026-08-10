@@ -28,9 +28,9 @@ func TestComposableComplete(t *testing.T, ctx types.TestContext) {
 func TestComposableCompleteReadOnly(t *testing.T, ctx types.TestContext) {
 	iamClient := GetAWSIAMClient(t)
 
-	policyArn := terraform.Output(t, ctx.TerratestTerraformOptions(), "policy_arn")
-	policyName := terraform.Output(t, ctx.TerratestTerraformOptions(), "policy_name")
-	policyDocument := terraform.Output(t, ctx.TerratestTerraformOptions(), "policy_document")
+	policyArn := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "policy_arn")
+	policyName := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "policy_name")
+	policyDocument := terraform.OutputContext(t, context.Background(), ctx.TerratestTerraformOptions(), "policy_document")
 
 	t.Run("TestIAMPolicyExists", func(t *testing.T) {
 		policy, err := iamClient.GetPolicy(context.TODO(), &iam.GetPolicyInput{
